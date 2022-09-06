@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Users\\jacob.frodermann\\Documents\\code\\GL",
+                "C:\\Users\\jacob.frodermann\\Documents\\code\\GL\\include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x86",
+            "compilerPath": "C:/Users/jacob.frodermann/Documents/Binaries/mysys2/mingw64/bin/g++.exe"
+        }
+    ],
+    "version": 4
+}

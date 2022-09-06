@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <head>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+
+            var out = document.getElementById("Out");
+            var inp = document.getElementById("Inp");
+            function add(Text) {
+                var ins = document.createElement("p");
+                ins.innerHTML = Text;
+                out.appendChild(ins);
+            }
+            function send(){
+                console.log("sent");
+                socket.emit('cmd',inp.value);
+                inp.value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="Out">
+
+        </div>
+        <input id="Inp">
+        <button onclick="send()">send</button>
+    </body>
+</html>
