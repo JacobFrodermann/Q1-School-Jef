@@ -1,5 +1,6 @@
 import SgJavaLib.datenstrukturen.Queue;
 class Player {
+    Thread t = Thread.currentThread();
     Queue<Title> queue = new Queue<Title>(); 
     
     void add( Title title) {
@@ -15,12 +16,16 @@ class Player {
     }
     
     void skip(){
+        t.interrupt();
         queue.dequeue();
+    }
+    void vote(int rating) {
+        queue.front().vote(rating);
     }
 
     class Title {
         String artist,genre,title;
-        int duration,votes,score;
+        private int duration,votes,score;
         double rating;
         Title(String title,String artist, String genre, int duration){
             this.title=title;this.artist = artist;this.genre = genre; this.duration = duration;
