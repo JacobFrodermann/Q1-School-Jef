@@ -13,3 +13,4 @@ public class queue<ContentType> extends SgJavaLib.datenstrukturen.Queue<ContentT
     }
     
 }
+d

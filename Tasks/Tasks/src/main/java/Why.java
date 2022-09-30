@@ -30,8 +30,8 @@ public class Why {
 
             for (int i = 0; i < 7; i++) {
                 Queue<String> h = new Queue<String>();
-                System.arraycopy(tmp, 0, h, 0, 7);
                 System.out.println(h.front());
+                og.
                 h.dequeue();       
             } 
 
