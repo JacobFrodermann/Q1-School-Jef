@@ -1,26 +1,42 @@
 import SgJavaLib.datenstrukturen.Queue;
 class Player {
+
+    public static Player INSTANCE = new Player();
+
+    public int totalDuration = 0, count = 0;
     Thread t = Thread.currentThread();
     Queue<Title> queue = new Queue<Title>(); 
     
     void add( Title title) {
         queue.enqueue(title);
+        count++;
+        totalDuration += title.duration;
     }
     void play(){
         while (!queue.isEmpty()) {
             Title t = queue.front();
             System.out.println("Es läuft:" + t.title + " von " + t.artist);
             try{Thread.sleep(t.duration);} catch (Exception e){}
-            queue.dequeue();
+            dequeue(t);
         }
     }
     
     void skip(){
         t.interrupt();
-        queue.dequeue();
+        dequeue(queue.front());
     }
     void vote(int rating) {
         queue.front().vote(rating);
+    }
+    void dequeue(Title t) {
+        queue.dequeue();
+        count --;
+        totalDuration -= t.duration;
+    }
+
+    void interrupt() {
+        t.interrupt();
+        dequeue(queue.front());
     }
 
     class Title {
