@@ -1,7 +1,3 @@
-import javax.swing.text.AbstractDocument.Content;
-
-import com.oracle.webservices.internal.api.message.ContentType;
-
 /*import SgJavaLib.datenstrukturen.Queue;
 
 class JukeBox{

@@ -32,5 +32,16 @@ public class List<ContentType> extends SgJavaLib.datenstrukturen.List<ContentTyp
     void clear(){
         toFirst();
         while (hasAccess()) remove();
-    }    
+    }
+    
+    ContentType[] toArray() { //basic
+        toFirst();
+        ContentType[] arr = ContentType[size];
+        toFirst();
+        for (int i = 0; hasAccess(); i++){
+             arr[i] = getContent();
+             next();
+        }
+        return arr;
+    }
 }

@@ -16,7 +16,6 @@ public class Why {
 
 
         while ( !og.isEmpty()) {
-
             System.out.println("warteschlange:");
             for (int i = 0; i < 7; i++) {
                 Queue<String> h = new Queue<String>();
