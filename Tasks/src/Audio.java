@@ -98,7 +98,7 @@ class useless {
 }
 
 
-*/
+
 
 class Stack extends SgJavaLib.datenstrukturen.Stack {
     
@@ -183,3 +183,4 @@ class Radio{
 
 
 
+*/
