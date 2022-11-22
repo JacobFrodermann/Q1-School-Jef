@@ -13,10 +13,19 @@ public class List<ContentType> extends SgJavaLib.datenstrukturen.List<ContentTyp
     }
     @Override
     public void insert(ContentType c) {
+        super.insert(c);
         if (!hasAccess()) throw new IndexOutOfBoundsException();
-        size--;
-        super.remove();
+        else {size++;}
     }
+    public void insert(int where,ContentType c) {
+        toFirst();
+        for (int i = 0; i>where; i++) next();
+        super.insert(c);
+        if (!hasAccess()) throw new IndexOutOfBoundsException();
+        else {size++;}
+    }
+    public void add(ContentType c) {append(c);}
+    public void add(int where, ContentType c){insert(where, c);}
     ContentType get(int where) {
         toFirst();
         for(int i = 0; i<where; i++){next();}

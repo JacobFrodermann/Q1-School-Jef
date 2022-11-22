@@ -1,22 +1,17 @@
-/*public class Stack<ContentType> extends SgJavaLib.datenstrukturen.Stack<ContentType> {
+public class Stack<ContentType> extends SgJavaLib.datenstrukturen.Stack<ContentType> {
     
     public int length = 0; 
 
     @Override
     public ContentType pop() {
-        if (!isEmpty()) {
-          this.head = this.head.getNext(); 
-          length --;
-        }
+        ContentType h = super.top();
+        super.pop();
+        return h;
     }
     @Override
     public void push(ContentType pContent) {
         length ++;
-        if (pContent != null) {
-          StackNode node = new StackNode(pContent);
-          node.setNext(this.head);
-          this.head = node;
-        } 
+        super.push(pContent);
     }
     
     public Stack clone(){
@@ -48,4 +43,6 @@
             push(c);
         }
     }
-}*/
+    public Stack() {
+    }
+}
