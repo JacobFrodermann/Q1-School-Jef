@@ -28,14 +28,14 @@ public class Stack<ContentType> extends SgJavaLib.datenstrukturen.Stack<ContentT
         return tmp;
     }
 
-    public ContentType[] toArray(){
+    /*public ContentType[] toArray(){
         ContentType[] tmp = new ContentType[length];       
         Stack<ContentType> tmp2 = clone();
         int l = tmp2.length;
         while (tmp2.length != 0) {
-            tmp[l-tmp2.length] = tmp2.pop();
+            tmp[l-tmp2.length] = tmp2.pop();    
         }
-    }
+    }*/
 
     public Stack(ContentType[] arr){
         super();
