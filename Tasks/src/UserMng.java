@@ -1,11 +1,27 @@
 import java.util.ArrayList;
 import java.util.Random;
+
+import javax.print.FlavorException;
+
 import java.util.List;
 
 public class UserMng {
     private List<Student> list = new ArrayList<Student>();
 
-    private class Student {private char gender = 'd';private String Name = ""; private int ID = 0; void setGender(char g){gender = g;} char getGender() {return gender;}Student(String Name){this.Name = Name; ID = new Random().nextInt(32000);}void newId(){ID = new Random().nextInt(32000);}void setName(String name){this.Name = name;} int getId(){return ID;}}
+    private class Student {
+        private Boolean enabled = true; 
+        void disable(){enabled = false;}
+        void enable(){enabled = true;} 
+        private char gender = 'd';
+        private String Name = ""; 
+        private int ID = 0; 
+        void setGender(char g){gender = g;} 
+        char getGender() {return gender;}
+        Student(String Name){this.Name = Name; ID = new Random().nextInt(32000);}
+        void newId(){ID = new Random().nextInt(32000);}
+        void setName(String name){this.Name = name;} 
+        int getId(){return ID;}
+    }
     private int index(){return list.size();}
     Student[] getByName(String name) {
         Student[] h = new Student[0];
@@ -27,5 +43,8 @@ public class UserMng {
         }
         return null;
     }
+    void rmStudent(int which) {list.remove(which);}
+    void enable(int which) {list.get(which).enable();}
+    void disable(int which) {list.get(which).disable();}
     void addStudent(Student s){list.add(s);}
 }
